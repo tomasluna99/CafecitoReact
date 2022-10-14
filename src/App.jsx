@@ -9,6 +9,8 @@ import Footer from "./components/common/Footer";
 import DetalleProducto from "./components/views/producto/DetalleProducto";
 import CrearProducto from "./components/views/producto/CrearProducto";
 import EditarProducto from "./components/views/producto/EditarProducto";
+import Login from "./components/common/Login";
+import Registro from "./components/common/Registro";
 function App() {
     return (
         //administrar las rutas;
@@ -22,6 +24,8 @@ function App() {
                 <Route exact path="/administrar/detalle" element={<DetalleProducto />} />
                 <Route exact path="/administrar/crear" element={<CrearProducto />} />
                 <Route exact path="/administrar/editar/:id" element={<EditarProducto />} />
+                <Route exact path="/usuario/login" element={<Login />} />
+                <Route exact path="/usuario/registro" element={<Registro />} />
             </Routes>
             <Footer />
         </BrowserRouter>

@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 const Menu = () => {
     return (
         <header>
-            <Navbar bg="danger" expand="lg">
+            <Navbar bg="danger" variant="dark" expand="lg">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
                         Cafe Sampy
@@ -16,6 +16,12 @@ const Menu = () => {
                             </Nav.Link>
                             <NavLink to="/administrar" className={"nav-item nav-link"}>
                                 Aministrador
+                            </NavLink>
+                            <NavLink to="/usuario/login" className={"nav-item nav-link"}>
+                                Login
+                            </NavLink>
+                            <NavLink to="/usuario/registro" className={"nav-item nav-link"}>
+                                Registro
                             </NavLink>
                         </Nav>
                     </Navbar.Collapse>
