@@ -8,13 +8,6 @@
       "id": 1
     },
     {
-      "nombreProducto": "brownie",
-      "precio": 250,
-      "categoria": "Dulce",
-      "imagen": "https://images.pexels.com/photos/887853/pexels-photo-887853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "id": 2
-    },
-    {
       "nombreProducto": "te",
       "precio": 150,
       "categoria": "Bebida caliente",
@@ -22,11 +15,34 @@
       "id": 3
     },
     {
-      "nombreProducto": "brownie",
-      "precio": 250,
+      "nombreProducto": "tostado de jamón y queso",
+      "precio": "100",
+      "imagen": "https://media.istockphoto.com/photos/cheese-and-ham-panini-sandwiches-on-a-wooden-board-picture-id155352902?s=612x612",
+      "categoria": "Salado",
+      "id": 7
+    },
+    {
+      "nombreProducto": "licuado de frutilla",
+      "precio": "250",
+      "imagen": "https://images.pexels.com/photos/2045362/pexels-photo-2045362.jpeg",
+      "categoria": "Bebida fria",
+      "id": 8
+    },
+    {
+      "nombreProducto": "medialuna",
+      "precio": "50",
+      "imagen": "https://images.pexels.com/photos/2135/food-france-morning-breakfast.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "categoria": "Dulce",
-      "imagen": "https://images.pexels.com/photos/887853/pexels-photo-887853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "id": 4
+      "id": 9
+    }
+  ],
+  "usuarios": [
+    {
+      "nombre": "Tomas",
+      "apellido": "Luna",
+      "email": "lunatomasgabriel@gmail.com",
+      "password": "43930664285127",
+      "id": 2
     }
   ]
 }

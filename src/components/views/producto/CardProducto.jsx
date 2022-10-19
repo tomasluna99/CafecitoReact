@@ -1,18 +1,18 @@
-import { Col, Card, Button } from "react-bootstrap";
-const CardProducto = () => {
+import { Col, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+const CardProducto = ({ producto }) => {
     return (
         <>
             <Col className="my-3">
                 <Card className="anchoCardProducto">
-                    <Card.Img
-                        variant="top"
-                        src="https://images.pexels.com/photos/887853/pexels-photo-887853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    />
+                    <Card.Img className="altoCardImageProducto" variant="top" src={producto.imagen} />
                     <Card.Body>
-                        <Card.Title>Brownie</Card.Title>
-                        <Card.Text>Precio: $400</Card.Text>
+                        <Card.Title>{producto.nombreProducto}</Card.Title>
+                        <Card.Text>Precio: ${producto.precio}</Card.Text>
                         <hr />
-                        <Button variant="danger">Ver mas</Button>
+                        <Link className="btn btn-danger" to={`/administrar/detalle/${producto.id}`}>
+                            Ver mas
+                        </Link>
                     </Card.Body>
                 </Card>
             </Col>

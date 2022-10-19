@@ -1,16 +1,31 @@
+import { useEffect } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
+import { obtenerProductoAPI } from "../../helpers/queries";
 
 const EditarProducto = () => {
+    const { id } = useParams();
     const {
         register,
         handleSubmit,
         formState: { errors },
+        setValue,
     } = useForm();
 
+    useEffect(() => {
+        obtenerProductoAPI(id).then((respuesta) => {
+            if (respuesta.status === 200) {
+                //cargar datos en el formulario
+                setValue("nombreProducto", respuesta.dato.nombreProducto);
+                setValue("precio", respuesta.dato.precio);
+                setValue("imagen", respuesta.dato.imagen);
+                setValue("categoria", respuesta.dato.categoria);
+            }
+        });
+    }, []);
+
     const onSubmitEditar = (dataProductoEditado) => {
-        console.log(dataProductoEditado);
-        console.log("prueba desde submit editar");
         //una vez todo validado enviamos la peticion a la API
     };
 
