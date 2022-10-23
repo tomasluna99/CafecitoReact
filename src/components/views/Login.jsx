@@ -14,6 +14,7 @@ const Login = () => {
         console.log(dataLogin);
         console.log("prueba desde submit login");
         //una vez todo validado enviamos la peticion a la API
+        
         //reseteo el formulario
         reset();
         //redirecciono al usuario a la pagina de Inicio

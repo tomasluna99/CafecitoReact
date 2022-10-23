@@ -8,10 +8,10 @@
       "id": 1
     },
     {
-      "nombreProducto": "te",
-      "precio": 150,
-      "categoria": "Bebida caliente",
+      "nombreProducto": "te de manzanilla",
+      "precio": "80",
       "imagen": "https://images.pexels.com/photos/230477/pexels-photo-230477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "categoria": "Bebida caliente",
       "id": 3
     },
     {
@@ -38,10 +38,10 @@
   ],
   "usuarios": [
     {
-      "nombre": "Tomas",
-      "apellido": "Luna",
-      "email": "lunatomasgabriel@gmail.com",
-      "password": "43930664285127",
+      "nombre": "Agustin",
+      "apellido": "Sampayo",
+      "email": "agustines82@gmail.com",
+      "password": "AA&ss1234",
       "id": 2
     }
   ]
