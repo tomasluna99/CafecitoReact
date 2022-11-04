@@ -1,91 +1,78 @@
 const URL = process.env.REACT_APP_API_CAFECITO;
-const URLU = process.env.REACT_APP_API_USUARIOS;
-//peticion GET (para recibir informacion)
-export const consultarAPI = async () => {
-    try {
+//peticion GET para obtener todos los productos
+//peticion POST crear un nuevo producto, en los login tambien lo puedo usar
+//peticion PUT sirve para modificar un producto
+//peticion DELETE sirve para borrar un producto
+
+
+export const consultarAPI = async()=>{
+    try{
+        // console.log(URL)
         const respuesta = await fetch(URL);
-        const listaProductos = await respuesta.json();
+        const listaProductos = await respuesta.json()
+        console.log(listaProductos)
         return listaProductos;
-    } catch (error) {
-        console.log(error);
+    }catch(error){
+        console.log(error)
         return false;
     }
-};
+}
 
-//peticion POST (para agregar un producto al servidor)// en el login tambien se usa para enviar datos
-export const crearProductoAPI = async (producto) => {
-    try {
+export const crearProductoAPI = async(producto)=>{
+    try{
         const respuesta = await fetch(URL, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
+            headers:{
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify(producto),
+            body: JSON.stringify(producto) 
         });
         return respuesta;
-    } catch (error) {
-        console.log(error);
+    }catch(error){
+        console.log(error)
         return false;
     }
-};
-
-//peticion DELETE (para borrar)
-export const borrarProductoAPI = async (id) => {
-    try {
-        const respuesta = await fetch(URL + "/" + id, {
-            method: "DELETE",
+}
+export const borrarProductoAPI = async(id)=>{
+    try{
+        const respuesta = await fetch(URL+'/'+id , {
+            method: "DELETE"
         });
         return respuesta;
-    } catch (error) {
-        console.log(error);
+    }catch(error){
+        console.log(error)
         return false;
     }
-};
+}
 
-//peticion PUT (para Editar)
-export const obtenerProductoAPI = async (id) => {
-    try {
-        const respuesta = await fetch(URL + "/" + id);
-        const producto = {
+export const obtenerProductoAPI = async(id)=>{
+    try{
+        // console.log(URL)
+        const respuesta = await fetch(URL+'/'+id);
+        const producto ={
             dato: await respuesta.json(),
-            status: respuesta.status,
-        };
-        return producto;
-    } catch (error) {
-        console.log(error);
+            status: respuesta.status
+        }
+     return producto;
+    }catch(error){
+        console.log(error)
         return false;
     }
-};
+}
 
-export const editarProductoAPI = async (id, productoEditado) => {
-    try {
-        const respuesta = await fetch(URL + "/" + id, {
+export const editarProductoAPI = async(id, producto)=>{
+    try{
+        // console.log(URL)
+        const respuesta = await fetch(URL+'/'+id,{
             method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
+            headers:{
+                "Content-Type":"application/json"
             },
-            body: JSON.stringify(productoEditado),
+            body: JSON.stringify(producto)
         });
-        return respuesta;
-    } catch (error) {
-        console.log(error);
+     return respuesta;
+    }catch(error){
+        console.log(error)
         return false;
     }
-};
-
-//peticion POST (para agregar un USUARIO al servidor)//
-export const crearUsuarioAPI = async (usuario) => {
-    try {
-        const respuesta = await fetch(URLU, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(usuario),
-        });
-        return respuesta;
-    } catch (error) {
-        console.log(error);
-        return false;
-    }
-};
+}
