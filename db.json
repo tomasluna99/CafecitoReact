@@ -8,33 +8,48 @@
       "id": 1
     },
     {
-      "nombreProducto": "té de manzanilla",
-      "precio": "150",
-      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "nombreProducto": "te de manzanilla",
+      "precio": "80",
+      "imagen": "https://images.pexels.com/photos/230477/pexels-photo-230477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "categoria": "Bebida caliente",
-      "id": 6
+      "id": 3
     },
     {
-      "categoria": "Dulce",
-      "imagen": "https://images.pexels.com/photos/1672304/pexels-photo-1672304.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-      "nombreProducto": "medialuna",
+      "nombreProducto": "tostado de jamón y queso",
       "precio": "100",
+      "imagen": "https://media.istockphoto.com/photos/cheese-and-ham-panini-sandwiches-on-a-wooden-board-picture-id155352902?s=612x612",
+      "categoria": "Salado",
       "id": 7
     },
     {
-      "nombreProducto": "torta de hojaldre",
-      "precio": "300",
-      "imagen": "https://images.pexels.com/photos/1672304/pexels-photo-1672304.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-      "categoria": "Dulce",
+      "nombreProducto": "licuado de frutilla",
+      "precio": "250",
+      "imagen": "https://images.pexels.com/photos/2045362/pexels-photo-2045362.jpeg",
+      "categoria": "Bebida fria",
       "id": 8
     },
     {
-      "nombreProducto": "Porcion de torta ML",
-      "precio": "350",
-      "imagen": "https://images.pexels.com/photos/1672304/pexels-photo-1672304.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "nombreProducto": "medialuna",
+      "precio": "50",
+      "imagen": "https://images.pexels.com/photos/2135/food-france-morning-breakfast.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "categoria": "Dulce",
       "id": 9
     }
   ],
-  "usuarios": []
+  "usuarios": [
+    {
+      "nombre": "Agustin",
+      "apellido": "Sampayo",
+      "email": "agustines82@gmail.com",
+      "password": "AA&ss1234",
+      "id": 2
+    },
+    {
+      "nombre": "Ricardo",
+      "apellido": "Mora",
+      "email": "ricardomora@gmail.com",
+      "password": "Rm&123456",
+      "id": 3
+    }
+  ]
 }

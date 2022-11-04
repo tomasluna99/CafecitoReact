@@ -1,7 +1,9 @@
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-const Login = () => {
+import { login } from "../helpers/queries";
+import Swal from "sweetalert2";
+const Login = ({ setUsuarioLogueado }) => {
     const {
         register,
         handleSubmit,
@@ -12,13 +14,21 @@ const Login = () => {
     const navegacion = useNavigate();
     const onSubmitLogin = (dataLogin) => {
         console.log(dataLogin);
-        console.log("prueba desde submit login");
-        //una vez todo validado enviamos la peticion a la API
-        
-        //reseteo el formulario
-        reset();
-        //redirecciono al usuario a la pagina de Inicio
-        navegacion("/");
+        login(dataLogin).then((respuesta) => {
+            console.log(respuesta);
+            if (respuesta) {
+                //almaceno el usuario en el state y localstorage
+                localStorage.setItem("tokenUsuario", JSON.stringify(respuesta));
+                setUsuarioLogueado(respuesta);
+                // si el usuario es correcto entonces redirecciono al admin
+                //reseteo el formulario
+                reset();
+                //redirecciono al usuario a la pagina de Administracion
+                navegacion("/administrar");
+            } else {
+                Swal.fire("El usuario no existe", "error en el nombre de usuario o password", "error");
+            }
+        });
     };
     return (
         <Container className="mainSection my-3">

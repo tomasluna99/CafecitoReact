@@ -1,5 +1,5 @@
+import "./app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import './app.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Administrador from "./components/views/Administrador";
 import Inicio from "./components/views/Inicio";
@@ -9,12 +9,17 @@ import Footer from "./components/common/Footer";
 import DetalleProducto from "./components/views/producto/DetalleProducto";
 import CrearProducto from "./components/views/producto/CrearProducto";
 import EditarProducto from "./components/views/producto/EditarProducto";
-
+import Login from "./components/views/Login";
+import Registro from "./components/views/Registro";
+import { useState } from "react";
 function App() {
+    const usuario = JSON.parse(localStorage.getItem("tokenUsuario")) || {};
+    const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
+
     return (
         //administrar las rutas;
         <BrowserRouter>
-            <Menu />
+            <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} />
             <Routes>
                 {/* dominio + path */}
                 <Route exact path="/" element={<Inicio />} />
@@ -23,6 +28,8 @@ function App() {
                 <Route exact path="/administrar/detalle/:id" element={<DetalleProducto />} />
                 <Route exact path="/administrar/crear" element={<CrearProducto />} />
                 <Route exact path="/administrar/editar/:id" element={<EditarProducto />} />
+                <Route exact path="/usuario/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
+                <Route exact path="/usuario/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado} />} />
             </Routes>
             <Footer />
         </BrowserRouter>

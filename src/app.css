@@ -1,9 +1,8 @@
-#root{
+#root {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-
-.mainSection{
+.mainSection {
     flex-grow: 1;
 }
